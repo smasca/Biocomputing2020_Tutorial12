@@ -8,6 +8,7 @@
 # and produces a scatter plot of those two variables that includes a trend line
 
 # Number of total COVID-19 cases in the City and County of Honolulu
+# Data taken from https://health.hawaii.gov/
 
 setwd("/Users/samanthamasca/Biocomputing2020_Tutorial12/")
 covid <- read.table(file = "COVID19_Honolulu.txt", header = TRUE, sep = "\t", stringsAsFactors = FALSE)
@@ -17,7 +18,7 @@ ggplot(data = covid, aes(x = days, y = cases)) +
         xlab("Time (days)") +
         ylab("Cases") +
         ggtitle("Number of Total COVID-19 Cases in County of Honolulu") +
-        geom_smooth(method = "loess")
+        geom_smooth(method = "lm")
         
 # Task 2: Given the data in “data.txt”. Write a script that generates two figures that summarize the data. 
 # First, show a barplot of the means of the four populations. 
