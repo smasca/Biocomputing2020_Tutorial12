@@ -18,7 +18,7 @@ ggplot(data = covid, aes(x = days, y = cases)) +
         xlab("Time (days)") +
         ylab("# of Cases") +
         ggtitle("Number of COVID-19 Cases per Day in County of Honolulu") +
-        geom_smooth(method = "lm")
+        geom_smooth(method = "lm") 
         
 # Task 2: Given the data in “data.txt”. Write a script that generates two figures that summarize the data. 
 # First, show a barplot of the means of the four populations. 
@@ -30,7 +30,7 @@ ggplot(data = covid, aes(x = days, y = cases)) +
 setwd("/Users/samanthamasca/Biocomputing2020_Tutorial12/")
 pop <- read.table(file = "data.txt", header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
-# finding avg observations in each region, then making a dataframe of it 
+# finding avg observations in each region, then making a dataframe with all the averages 
 northData = pop[pop$region=="north",]
 northAvg <- mean(northData$observations)
   
@@ -61,8 +61,8 @@ ggplot(data = pop, aes(x = region, y = observations, color = region)) +
   geom_jitter()
 
 # Do the bar and scatter plots tell you different stories? Why?
-# The barplots tell us the average number of observations, while the scatterplots
-# display a dots for each (and every) observation for a region.  If one wanted to see 
+# The barplot tells us the average number of observations in each region, while the scatterplot
+# displays a dot for each (and every) observation for a region.  If one wanted to see 
 # all the different observations in one group, use a scatterplot.  If one wanted to 
 # see the average observations between the different regions and compare, use a 
 # barplot.
